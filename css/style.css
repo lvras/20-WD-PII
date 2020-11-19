@@ -1,0 +1,51 @@
+:root{
+    --color-principal: #606060;
+    --color-contenedores: #a0a0a0;
+    --fuente:'Open Sans', sans-serif;
+}
+
+*{
+    font-family: var(--fuente);
+}
+
+body{
+    font-family: var(--fuente);
+    /* font-size: 12px; */
+}
+
+.color{
+    background-color: var(--color-contenedores);
+}
+
+.navbar{
+    min-height: 80px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+}
+
+.nav-link {color: white;}
+.nav-link:hover {color: black;}
+.raya:hover{color: white; cursor: default;}
+.navbar-toggler:focus{outline: none;}
+
+#hero{
+    padding-top: 80px;
+}
+
+.content-center{
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* h1{
+    font-size: 30px;
+} */
+
+.buscador{
+    padding-top:30px;
+}
+
+@media (min-width: 576px) {
+    hr{
+        width: 60%;
+    }
+}
