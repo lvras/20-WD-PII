@@ -14,6 +14,11 @@ body{
     /* font-size: 12px; */
 }
 
+.content-center{
+    margin-top: 90px;
+    text-align: center;
+}
+
 .color{
     background-color: var(--color-contenedores);
 }
@@ -27,3 +32,9 @@ body{
 .nav-link:hover {color: black;}
 .raya:hover{color: white; cursor: default;}
 .navbar-toggler:focus{outline: none;}
+
+@media (min-width: 414px) {
+    hr{
+        width: 60%;
+    }
+}
