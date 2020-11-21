@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Registro</title>
     <link rel="shortcut icon" href="../images/Favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/standard.css">
@@ -41,7 +41,7 @@
                             <a class="nav-link raya">|</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Ingresar</a>
+                            <a class="nav-link" href="../login/login.html">Ingresar</a>
                         </li>
                         <li class="nav-item disabled">
                             <a class="nav-link raya"></a>
@@ -58,34 +58,72 @@
         </nav>
     </header>
     <main>
-        <div class="container">
-            <div class="content-center categorias">
-                <h1>Ingreso de usuario</h1>
-                <hr class="my-4 bg-secondary w-50">
+        <div class="content-center categorias">
+            <h1>Registro de usuario</h1>
+            <hr class="my-4 bg-secondary w-50">
+        </div>
+        <section class="contact-box ml-lg-4">
+            <div class="row no-gutters">
+                <div class="col-xl-3 col-lg-12 ml-lg-5">
+                </div>
+                <div class="col-xl-6 col-lg-12 d-flex">
+                    <div class="container align-self-center ">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <input type="text" class="form-control" placeholder="Nombre">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <input type="text" class="form-control" placeholder="Apellido">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-10">
+                                    <input type="text" class="form-control" placeholder="Direccion #1">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-10">
+                                    <input type="text" class="form-control" placeholder="Direccion #2">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <select id="inputState" class="form-control">
+                                        <option disabled selected>Pais</option>
+                                        <option>Costa Rica</option>
+                                        <option>Nicaragua</option>
+                                        <option>Panama</option>
+                                        <option>Honduras</option>
+                                        <option>Colombia</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <input type="text" class="form-control" placeholder="Ciudad">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <input type="text" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <input type="password" class="form-control" placeholder="Contraseña" id="inputPassword">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <form>
-                <div class="form-group row justify-content-center">
-                    <div class="col-lg-5">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite su email">
-                    </div>
-                </div>
-                <div class="form-group row justify-content-center">
-                    <div class="col-lg-5">
-                        <label for="exampleInputPassword1">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"
-                            placeholder="Digite su contraseña">
-                    </div>
-                </div>
-                <hr class="my-5 bg-secondary w-25">
-                <div class="form-group row justify-content-center">
-                    <p>Si no tiene una cuenta de usuario <a href="../registro/registro.html">registrese aqui.</a></p>
-                </div>
-                <div class="pt-1 form-group row justify-content-center">
-                    <button type="submit" class="btn btn-secondary btn-lg mr-4">Cancelar</button>
-                    <button type="submit" class="btn btn-dark btn-lg ml-lg-5">Ingresar</button>
-                </div>
-            </form>
+        </section>
+        <div class="container">
+            <hr class="my-3 bg-secondary w-25 w-sm-50">
+            <div class="row justify-content-center">
+                <p>Si ya tiene una cuenta de usuario <a href="../login/login.html">ingrese aqui.</a></p>
+            </div>
+            <div class="my-3 row justify-content-center">
+                <button type="submit" class="btn btn-secondary btn-lg mr-4">Cancelar</button>
+                <button type="submit" class="btn btn-dark btn-lg ml-lg-5">Registrar</button>
+            </div>
         </div>
     </main>
     <footer class="color pt-1">
@@ -104,7 +142,7 @@
                     <a class="nav-link raya">|</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Ingresar</a>
+                    <a class="nav-link" href="../login/login.html">Ingresar</a>
                 </li>
                 <li class="nav-item disabled">
                     <a class="nav-link raya"></a>
