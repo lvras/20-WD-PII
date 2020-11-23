@@ -45,11 +45,11 @@ body {
     outline: none;
 }
 
+
 @media (max-width: 414px) {
     hr {
         width: 60%;
     }
-
 }
 
 @media (max-width:400px) {
@@ -57,5 +57,18 @@ body {
         padding-right: 140px;
         margin-left: 150px;
         justify-content: center;
+    }
+}
+
+@media (min-height:1024px){
+    footer{
+        bottom: 0;
+        position: relative;
+    }
+}
+
+@media (min-width: 768px){
+    .fot{
+        margin-left: 50px;
     }
 }
