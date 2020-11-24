@@ -19,6 +19,18 @@
     margin-top: 20px;
 }
 
+.celda{
+    width: 99.9%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-top: 2px solid var(--color-contenedores);
+    border-bottom: 2px solid var(--color-contenedores);
+}
+
+.e-e{
+    width: 100%;
+}
+
 footer {
     width: 100%;
     padding-bottom: 10px;
