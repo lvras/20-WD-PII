@@ -5,6 +5,10 @@
     --fuente:'Open Sans', sans-serif;
 }
 
-.content-center{
-    padding-top: 20px;
+.img-fluid{
+    max-height: 500px;
+}
+
+main{
+    padding-top: 120px;
 }

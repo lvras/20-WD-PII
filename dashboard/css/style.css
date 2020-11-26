@@ -27,36 +27,14 @@
     border-bottom: 2px solid var(--color-contenedores);
 }
 
-.e-e{
-    width: 100%;
-}
-
-footer {
-    width: 100%;
-    padding-bottom: 10px;
-}
-
-html, body {
-    height: 99.2%;
-    margin: 0;
-}
-
-#wrap {
-    padding: 10px;
-    min-height: -webkit-calc(100% - 100px);     /* Chrome */
-    min-height: -moz-calc(100% - 100px);     /* Firefox */
-    min-height: calc(100% - 100px);     /* native */
-}
-
-/* Rango de las Ipad */
-@media (min-width: 768px){
-    html, body{
-        height: 99.6%;
+@media (min-width: 1025px){
+    .e-e{
+        width: 100%;
     }
 }
 
-@media (min-width: 1025px){
-    html, body{
-        height: 99.2%;
+@media (max-width: 540px){
+    .e-e{
+        width: 100%;
     }
 }
