@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cambalaches</title>
+    <title>Info producto</title>
     <link rel="shortcut icon" href="../images/Favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/standard.css">
@@ -42,7 +42,7 @@
                                 <a class="nav-link raya">|</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Ingresar</a>
+                                <a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a>
                             </li>
                             <li class="nav-item disabled">
                                 <a class="nav-link raya"></a>
@@ -61,62 +61,29 @@
         <main>
             <div class="container">
                 <div class="content-center categorias">
-                    <h1>Cambalaches</h1>
-                    <p>Encuentre aqui los productos que te gusten para iniciar tu Cambalache</p>
-                    <hr class="my-4 bg-secondary w-75">
+                    <h1>Nuevo producto</h1>
+                    <hr class="my-4 bg-secondary w-50">
                 </div>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="row">
-                                <div class="col-md-5 col-lg-6">
-                                    <img src="../images/electronicos.jpg" alt="..." class="img-fluid" />
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nikon d5300</h5>
-                                        <p class="card-text">
-                                            lvrascr
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row justify-content-center">
+                    <form class="text-center col-md-10">
+                        <p class="h5 mb-4">Ingrese aqui la informacion del producto que desea incluir en Cambalache.net</p>
+                        <div class="form-group">
+                            <input type="text" class="form-control col-md-5" placeholder="Nombre producto">
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="row">
-                                <div class="col-md-5 col-lg-6">
-                                    <img src="../images/hogar.jpeg" alt="..." class="img-fluid" />
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nikon d5300</h5>
-                                        <p class="card-text">
-                                            lvrascr
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Descripcion" rows="3"></textarea>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="row">
-                                <div class="col-md-5 col-lg-6">
-                                    <img src="../images/carros.jpg" alt="..." class="img-fluid" />
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nikon d5300</h5>
-                                        <p class="card-text">
-                                            lvrascr
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Imagen">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Busco" rows="3"></textarea>
+                        </div>
+                        <div class="row justify-content-center pt-2 my-4">
+                            <button type="submit" class="btn btn-secondary btn-lg mr-4">Cancelar</button>
+                            <button type="submit" class="btn btn-dark btn-lg ml-lg-5">Guardar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </main>
@@ -131,13 +98,13 @@
                     <a class="nav-link raya">|</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Cambalaches</a>
+                    <a class="nav-link" href="../cambalache/cambalache.html">Cambalaches</a>
                 </li>
                 <li class="nav-item disabled">
                     <a class="nav-link raya">|</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Ingresar</a>
+                    <a class="nav-link" href="../dashboard/dashboard.html">Dashboard</a>
                 </li>
                 <li class="nav-item disabled">
                     <a class="nav-link raya"></a>
