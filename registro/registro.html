@@ -65,28 +65,28 @@
                     <hr class="my-4 bg-secondary w-50">
                 </div>
                 <div class="row justify-content-center">
-                    <form>
+                    <form id="form">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <input type="text" id="nombre" name="nombre" class="form-control border border-secondary" placeholder="Nombre" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="Apellido">
+                                <input type="text" id="apellido" name="apellido" class="form-control border border-secondary" placeholder="Apellido" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Direccion #1">
+                                <input type="text" id="dir1" class="form-control border-secondary" placeholder="Direccion #1" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control" placeholder="Direccion #2">
+                                <input type="text" id="dir2" class="form-control border-secondary" placeholder="Direccion #2">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <select id="inputState" class="form-control">
+                                <select id="pais" class="form-control border-secondary" required>
                                     <option disabled selected>Pais</option>
                                     <option>Costa Rica</option>
                                     <option>Nicaragua</option>
@@ -96,28 +96,29 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="Ciudad">
+                                <input type="text" id="ciudad" class="form-control border-secondary" placeholder="Ciudad" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="text" id="email" name="email" class="form-control border border-secondary" placeholder="Email" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="password" class="form-control" placeholder="Contraseña" id="inputPassword">
+                                <input type="password" id="contra" name="contra" class="form-control border border-secondary" placeholder="Contraseña" required>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p class="warnings msg" id="warnings"></p>
+                            <hr class="my-3 bg-secondary w-50 w-sm-75">
+                            <div class="row justify-content-center">
+                                <p>Si ya tiene una cuenta de usuario <a href="../login/login.html">ingrese aqui.</a></p>
+                            </div>
+                            <div class="my-3 row justify-content-center">
+                                <button type="reset" class="btn btn-secondary btn-lg mr-4">Cancelar</button>
+                                <button type="submit" class="btn btn-dark btn-lg ml-lg-5">Registrar</button>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-            <div class="container">
-                <hr class="my-3 bg-secondary w-25 w-sm-50">
-                <div class="row justify-content-center">
-                    <p>Si ya tiene una cuenta de usuario <a href="../login/login.html">ingrese aqui.</a></p>
-                </div>
-                <div class="my-3 row justify-content-center">
-                    <button type="submit" class="btn btn-secondary btn-lg mr-4">Cancelar</button>
-                    <button type="submit" class="btn btn-dark btn-lg ml-lg-5">Registrar</button>
                 </div>
             </div>
         </main>
@@ -161,6 +162,8 @@
     <script src="../js/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="../js/bootstrap.min.js"></script>
+    <!-- JS -->
+    <script src="./js/registro.js"></script>
 </body>
 
 </html>
