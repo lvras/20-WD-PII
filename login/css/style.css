@@ -8,3 +8,11 @@
 .content-center{
     padding-top: 30px;
 }
+
+.msg{
+    display: none;
+}
+
+.msg-active{
+    display: block;
+}

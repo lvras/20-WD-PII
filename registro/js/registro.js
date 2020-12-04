@@ -34,6 +34,10 @@ function registrar(per) {
     localStorage.setItem("Personas", JSON.stringify(arrayPersonas));
 }
 
+function userLog(per){
+    localStorage.setItem("User-Log", JSON.stringify(per))
+}
+
 (() => {
     arrayPersonas = JSON.parse(localStorage.getItem("Personas"));
     if (arrayPersonas === null) {
@@ -105,8 +109,8 @@ inputs.forEach((input) => {
 })
 
 formulario.addEventListener("submit", (e) => {
-    let estado = false;
     e.preventDefault();
+    let estado = false;
     if (campos.nombre && campos.apellido && campos.email && campos.contra) {
         if (arrayPersonas.length === 0) {
             var per = new Persona(contador, nombre.value, apellido.value, direccion_1.value, direccion_2.value, pais.value, ciudad.value, email.value, contrasenna.value);
@@ -122,6 +126,7 @@ formulario.addEventListener("submit", (e) => {
                 contador = arrayPersonas[arrayPersonas.length - 1]._id + 1;
                 var per = new Persona(contador, nombre.value, apellido.value, direccion_1.value, direccion_2.value, pais.value, ciudad.value, email.value, contrasenna.value);
                 registrar(per);
+                userLog(per);
                 alerta(estado);
             } else {
                 alerta(estado);
@@ -143,7 +148,7 @@ function alerta(estado) {
         setTimeout(() => {
             document.getElementById("warnings").classList.remove("msg-active");
             document.getElementById("warnings").classList.add("msg");
-            location.reload();
-        }, 2500)
+            window.location.assign('../dashboard/dashboard.html')
+        }, 2000)
     }
 }
