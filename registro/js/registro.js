@@ -152,3 +152,27 @@ function alerta(estado) {
         }, 2000)
     }
 }
+
+$(document).ready(function () {
+    $('#button-nav').click(function () {
+        $('#line1').hide();
+        $('#line2').hide();
+    })
+
+    $(window).resize(function () {
+        $('#line1').show();
+        $('#line2').show();
+    })
+
+    $(window).resize(function () {
+        var width = $(window).width();
+        if (width <= 400) {
+            $('#line1b').hide();
+            $('#line2b').hide();
+        }
+        if (width >= 401) {
+            $('#line1b').show();
+            $('#line2b').show();
+        }
+    });
+})

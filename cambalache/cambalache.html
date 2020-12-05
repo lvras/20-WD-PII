@@ -22,7 +22,7 @@
                         <img src="../images/Favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
                         Cambalache.net
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    <button class="navbar-toggler" id="button-nav" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -33,13 +33,13 @@
                                 <a class="nav-link" href="../index.html">Inicio</a>
                             </li>
                             <li class="nav-item disabled">
-                                <a class="nav-link raya">|</a>
+                                <a class="nav-link raya" id="line1">|</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">Cambalaches</a>
                             </li>
                             <li class="nav-item disabled">
-                                <a class="nav-link raya">|</a>
+                                <a class="nav-link raya" id="line2">|</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">Ingresar</a>
@@ -65,58 +65,8 @@
                     <p>Encuentre aqui los productos que te gusten para iniciar tu Cambalache</p>
                     <hr class="my-4 bg-secondary w-75">
                 </div>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="row">
-                                <div class="col-md-5 col-lg-6">
-                                    <img src="../images/electronicos.jpg" alt="..." class="img-fluid" />
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nikon d5300</h5>
-                                        <p class="card-text">
-                                            lvrascr
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="row">
-                                <div class="col-md-5 col-lg-6">
-                                    <img src="../images/hogar.jpeg" alt="..." class="img-fluid" />
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nikon d5300</h5>
-                                        <p class="card-text">
-                                            lvrascr
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="row">
-                                <div class="col-md-5 col-lg-6">
-                                    <img src="../images/carros.jpg" alt="..." class="img-fluid" />
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nikon d5300</h5>
-                                        <p class="card-text">
-                                            lvrascr
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="base">
+
                 </div>
             </div>
         </main>
@@ -128,13 +78,13 @@
                     <a class="nav-link" href="../index.html">Inicio</a>
                 </li>
                 <li class="nav-item disabled">
-                    <a class="nav-link raya">|</a>
+                    <a class="nav-link raya" id="line1b">|</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Cambalaches</a>
                 </li>
                 <li class="nav-item disabled">
-                    <a class="nav-link raya">|</a>
+                    <a class="nav-link raya" id="line2b">|</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Ingresar</a>
@@ -160,6 +110,8 @@
     <script src="../js/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="../js/bootstrap.min.js"></script>
+    <!-- JS -->
+    <script src="./js/cambalache.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@ formulario.addEventListener("reset", e => {
     mensaje.innerHTML = "";
 })
 
-function userLog(per){
+function userLog(per) {
     localStorage.setItem("User-Log", JSON.stringify(per))
 }
 
@@ -25,21 +25,21 @@ formulario.addEventListener("submit", (e) => {
     estado = '';
     corr = '';
     let per;
-    if (email.value == '' && contrasenna.value == '') {
-    } else {
+    if (email.value == '' && contrasenna.value == '') {} else {
         if (arrayPersonas.length === 0) {
             estado = 'vacio';
+            alerta(estado);
         } else {
             arrayPersonas.forEach(element => {
-                if(element._email == email.value){
+                if (element._email == email.value) {
                     corr = element._email;
                 }
                 if (element._email == email.value && element._contra == contrasenna.value) {
                     per = element;
                 }
             })
-            if(per == null){
-                if(corr != ''){
+            if (per == null) {
+                if (corr != '') {
                     estado = 'contra'
                     alerta(estado);
                 } else {
@@ -66,10 +66,10 @@ function alerta(estado) {
     } else if (estado == 'usuario') {
         warnings = `Usuario no registrado <br>`
         mensaje.innerHTML = warnings;
-    } else if (estado == 'contra'){
+    } else if (estado == 'contra') {
         warnings = `Contraseña incorrecta <br>`
         mensaje.innerHTML = warnings;
-    } else if (estado == 'vacio'){
+    } else if (estado == 'vacio') {
         warnings = `No hay usuarios registrados, por favor registrese <br>`
         mensaje.innerHTML = warnings;
     }
@@ -107,3 +107,27 @@ class Persona {
         this._contra = contrasenna;
     }
 }
+
+$(document).ready(function () {
+    $('#button-nav').click(function () {
+        $('#line1').hide();
+        $('#line2').hide();
+    })
+
+    $(window).resize(function () {
+        $('#line1').show();
+        $('#line2').show();
+    })
+
+    $(window).resize(function () {
+        var width = $(window).width();
+        if (width <= 400) {
+            $('#line1b').hide();
+            $('#line2b').hide();
+        }
+        if (width >= 401) {
+            $('#line1b').show();
+            $('#line2b').show();
+        }
+    });
+})
