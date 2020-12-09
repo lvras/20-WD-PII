@@ -24,8 +24,8 @@ function cargarProducto() {
                             <div class="col-md-7 col-lg-6">
                                 <div class="card-body">
                                     <h5 class="card-title">${element._nombre}</h5>
-                                    <button type="submit" class="btn btn-success mb-3 e-e">Editar</button>
-                                    <button type="submit" class="btn btn-danger e-e">Eliminar</button>
+                                    <button type="submit" name="${element._id}" class="btn btn-success mb-3 e-e">Editar</button>
+                                    <button type="submit" name="${element._id}" class="btn btn-danger e-e">Eliminar</button>
                                 </div>
                             </div>
                         </div>
@@ -38,8 +38,32 @@ function cargarProducto() {
     })
 }
 
+const boton = document.querySelectorAll('button');
+
+boton.forEach(function(item){
+    item.addEventListener('click', function(){
+        arrayProductos.forEach(element => {
+            if(element._id == item.name){
+                if(item.innerText == 'Editar'){
+                    localStorage.setItem("Prod-edit", JSON.stringify(element));
+                    localStorage.setItem("Editar", JSON.stringify(true));
+                    window.location.assign('../info-producto/agregar-producto.html');
+                } else{
+                    document.getElementById('base').innerHTML = '';
+                    localStorage.setItem("Editar", JSON.stringify(false));
+                    arrayProductos.splice(arrayProductos.indexOf(element), 1);
+                    localStorage.setItem("Productos", JSON.stringify(arrayProductos));
+                    cargarProducto();
+                }
+            }
+        })
+    })
+})
+
+
 document.querySelector('#new').addEventListener('click', e => {
     e.preventDefault();
+    localStorage.setItem("Editar", JSON.stringify(false))
     window.location.assign('../info-producto/agregar-producto.html')
 })
 

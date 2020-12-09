@@ -1,37 +1,36 @@
 var arrayProductos;
 var user;
+var cont = 0;
 
 (() => {
     user = JSON.parse(localStorage.getItem("User-Log"));
-    arrayProductos = JSON.parse(localStorage.getItem("Productos"));
+    arrayProductos = JSON.parse(localStorage.getItem("Productos")).reverse();
+    console.log(arrayProductos);
     if (arrayProductos === null) {
         arrayProductos = [];
     }
     cargarProducto();
 })();
 
-function cargarProducto() {
-    arrayProductos.reverse().forEach(element => {
-        produ = `<div class="card mb-3">
-                    <div class="row">
-                        <div class="col-md-5 col-lg-6">
-                            <img src="${element._url}" name="${element._id}" alt="..." class="img-fluid" />
-                        </div>
-                        <div class="col-md-7 col-lg-6">
-                            <div class="card-body">
-                                <h5 class="card-title">${element._nombre}</h5>
-                                <p class="card-text">
-                                ${element._user._nom}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-        var ob = document.createElement("div")
-        ob.className = "col";
-        ob.innerHTML = produ;
-        document.getElementById('base').appendChild(ob);
-    })
+function cargarProducto(){
+    arrayProductos.forEach(element => {
+        if(cont == 0){
+            img1 = document.getElementById("img1")
+            img1.src = element._url
+            img1.name = element._id
+            img1.innerHTML
+            t1 = document.getElementById("t1")
+            t1.innerText = element._nombre
+        } else if(cont == 1){
+            img2 = document.getElementById("img2")
+            img2.src = element._url
+            img2.name = element._id
+            img2.innerHTML
+            t2 = document.getElementById("t2")
+            t2.innerText = element._nombre
+        }
+        cont ++;
+    });
 }
 
 const img = document.querySelectorAll('img');
@@ -46,6 +45,11 @@ img.forEach(function(item){
             }
         })
     })
+})
+
+
+$('.carousel').carousel({
+    interval: 4000
 })
 
 $(document).ready(function () {

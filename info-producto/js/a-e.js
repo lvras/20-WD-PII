@@ -4,8 +4,10 @@ const descripcion = document.getElementById("descripcion");
 const imagen = document.getElementById("url");
 const busqueda = document.getElementById("busco");
 var User;
+var estado;
 let arrayProductos = [];
 var contador = 1;
+var prod = JSON.parse(localStorage.getItem("Prod-edit"));
 
 (() => {
     User = JSON.parse(localStorage.getItem("User-Log"));
@@ -13,21 +15,48 @@ var contador = 1;
     if (arrayProductos === null) {
         arrayProductos = [];
     }
+    console.log(arrayProductos);
+
+    estado = JSON.parse(localStorage.getItem("Editar"));
+    if(estado){
+        nombre.value = prod._nombre;
+        descripcion.value = prod._descripcion;
+        imagen.value = prod._url;
+        busqueda.value = prod._busqueda;
+    }
 })();
 
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();
-    if(arrayProductos.length != 0){
-        contador = arrayProductos[arrayProductos.length - 1]._id + 1;
+    if(!estado){
+        if(arrayProductos.length != 0){
+            contador = arrayProductos[arrayProductos.length - 1]._id + 1;
+        }
+        var pro = new Producto(contador, User, nombre.value, descripcion.value, imagen.value, busqueda.value);
+    } else {
+        var pro = new Producto(prod._id, prod._user, nombre.value, descripcion.value, imagen.value, busqueda.value);
     }
-    var pro = new Producto(contador, User, nombre.value, descripcion.value, imagen.value, busqueda.value);
     registrar(pro);
     formulario.reset();
     window.location.assign('../dashboard/dashboard.html')
 })
 
+formulario.addEventListener("reset", (e) => {
+    if(estado){
+        window.location.assign('../dashboard/dashboard.html')
+    }
+})
+
 function registrar(pro) {
-    arrayProductos.push(pro);
+    if(estado){
+        arrayProductos.forEach(element => {
+            if(element._id == prod._id){
+                arrayProductos.splice(arrayProductos.indexOf(element), 1, pro)
+            }
+        });
+    } else {
+        arrayProductos.push(pro);
+    }
     localStorage.setItem("Productos", JSON.stringify(arrayProductos));
 }
 
