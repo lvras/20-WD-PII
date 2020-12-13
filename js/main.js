@@ -89,3 +89,49 @@ $(document).ready(function () {
         }
     });
 })
+
+const formulario = document.querySelector('#search');
+const boton = document.querySelector('#boton');
+const resultado = document.querySelector('#resultado');
+const list = document.querySelectorAll('li');
+
+const filtrar = ()=>{
+    resultado.innerHTML = '';
+    resultado.style.display = 'block';
+    const texto = formulario.value.toLowerCase();
+    for(let producto of arrayProductos){
+        let nombre = producto._nombre.toLowerCase();
+        if (nombre.indexOf(texto) !== -1) {
+            resultado.innerHTML += `
+            <li class = "ops mt-1" id = "${producto._id}">${producto._nombre}</li>`
+        }
+    }
+
+    if (resultado.innerHTML === '') {
+        resultado.innerHTML += `
+            <li>Producto no encontrado...</li>`
+    }
+
+    if (formulario.value === '') {
+        resultado.style.display = 'none';
+    }
+}
+
+attachEvent(resultado, "click", EventHandler);
+
+function attachEvent(element, type, handler) {
+    if (element.addEventListener) element.addEventListener(type, handler, false);
+    else element.attachEvent("on"+type, handler);
+}
+
+function EventHandler(e) {
+    arrayProductos.forEach(element => {
+        if(element._id == e.target.id){
+            localStorage.setItem("Prod-selec", JSON.stringify(element));
+            window.location.assign('../producto/producto.html');
+        }
+    })
+}
+
+boton.addEventListener('click', filtrar);
+formulario.addEventListener('keyup', filtrar);

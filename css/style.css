@@ -21,6 +21,22 @@
     padding-top: 30px;
 }
 
+.ops:hover{
+    cursor: pointer;
+    background: gray;
+}
+
+.box{
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    list-style: none;
+    background: #efefef;
+    /* margin-right: 100px; */
+    /* margin-left: 36px;
+    width: 554px; */
+}
+
 .categorias {
     margin-top: 70px;
 }
