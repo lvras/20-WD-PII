@@ -48,7 +48,7 @@ boton.forEach(function(item){
                     localStorage.setItem("Prod-edit", JSON.stringify(element));
                     localStorage.setItem("Editar", JSON.stringify(true));
                     window.location.assign('../info-producto/agregar-producto.html');
-                } else{
+                } else {
                     document.getElementById('base').innerHTML = '';
                     localStorage.setItem("Editar", JSON.stringify(false));
                     arrayProductos.splice(arrayProductos.indexOf(element), 1);

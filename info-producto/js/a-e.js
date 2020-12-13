@@ -15,7 +15,6 @@ var prod = JSON.parse(localStorage.getItem("Prod-edit"));
     if (arrayProductos === null) {
         arrayProductos = [];
     }
-    console.log(arrayProductos);
 
     estado = JSON.parse(localStorage.getItem("Editar"));
     if(estado){

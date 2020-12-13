@@ -4,12 +4,27 @@ var cont = 0;
 
 (() => {
     user = JSON.parse(localStorage.getItem("User-Log"));
+    log = JSON.parse(sessionStorage.getItem("Log"));
+    if (log != null){
+        arriba = document.getElementById("logger1");
+        abajo = document.getElementById("logger2");
+        arriba.innerText = 'Dashboard'
+        arriba.href = './dashboard/dashboard.html'
+        abajo.innerText = 'Dashboard'
+        abajo.href = './dashboard/dashboard.html'
+    }
     arrayProductos = JSON.parse(localStorage.getItem("Productos")).reverse();
-    console.log(arrayProductos);
     if (arrayProductos === null) {
         arrayProductos = [];
     }
     cargarProducto();
+})();
+
+(() => {
+    arrayPersonas = JSON.parse(localStorage.getItem("Personas"));
+    if (arrayPersonas === null) {
+        arrayPersonas = [];
+    }
 })();
 
 function cargarProducto(){
@@ -39,7 +54,6 @@ img.forEach(function(item){
     item.addEventListener('click', function(){
         arrayProductos.forEach(element => {
             if(element._id == item.name){
-                console.log(element);
                 localStorage.setItem("Prod-selec", JSON.stringify(element));
                 window.location.assign('../producto/producto.html');
             }

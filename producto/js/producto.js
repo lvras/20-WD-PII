@@ -1,4 +1,17 @@
+var arrayProductos;
+var user;
+
 (() => {
+    log = JSON.parse(sessionStorage.getItem("Log"));
+    if (log != null){
+        arriba = document.getElementById("logger1");
+        abajo = document.getElementById("logger2");
+        arriba.innerText = 'Dashboard'
+        arriba.href = '../dashboard/dashboard.html'
+        abajo.innerText = 'Dashboard'
+        abajo.href = '../dashboard/dashboard.html'
+    }
+
     user = JSON.parse(localStorage.getItem("User-Log"));
     prod = JSON.parse(localStorage.getItem("Prod-selec"));
     cargarProducto();

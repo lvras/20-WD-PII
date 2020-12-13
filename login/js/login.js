@@ -10,6 +10,7 @@ formulario.addEventListener("reset", e => {
 })
 
 function userLog(per) {
+    sessionStorage.setItem("Log", JSON.stringify(true))
     localStorage.setItem("User-Log", JSON.stringify(per))
 }
 
@@ -93,20 +94,6 @@ inputs.forEach((input) => {
     input.addEventListener("keyup", limpiarMensaje);
     input.addEventListener("blur", limpiarMensaje);
 })
-
-class Persona {
-    constructor(id, nombre, apellido, direccion_1, direccion_2, pais, ciudad, email, contrasenna) {
-        this._id = id;
-        this._nom = nombre;
-        this._appe = apellido;
-        this._dir1 = direccion_1;
-        this._dir2 = direccion_2;
-        this._pais = pais;
-        this._ciudad = ciudad;
-        this._email = email;
-        this._contra = contrasenna;
-    }
-}
 
 $(document).ready(function () {
     $('#button-nav').click(function () {

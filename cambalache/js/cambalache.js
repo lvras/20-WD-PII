@@ -2,6 +2,16 @@ var arrayProductos;
 var user;
 
 (() => {
+    log = JSON.parse(sessionStorage.getItem("Log"));
+    if (log != null){
+        arriba = document.getElementById("logger1");
+        abajo = document.getElementById("logger2");
+        arriba.innerText = 'Dashboard'
+        arriba.href = '../dashboard/dashboard.html'
+        abajo.innerText = 'Dashboard'
+        abajo.href = '../dashboard/dashboard.html'
+    }
+
     user = JSON.parse(localStorage.getItem("User-Log"));
     arrayProductos = JSON.parse(localStorage.getItem("Productos"));
     if (arrayProductos === null) {
@@ -40,7 +50,6 @@ img.forEach(function(item){
     item.addEventListener('click', function(){
         arrayProductos.forEach(element => {
             if(element._id == item.name){
-                console.log(element);
                 localStorage.setItem("Prod-selec", JSON.stringify(element));
                 window.location.assign('../producto/producto.html');
             }
