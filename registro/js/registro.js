@@ -34,8 +34,9 @@ function registrar(per) {
     localStorage.setItem("Personas", JSON.stringify(arrayPersonas));
 }
 
-function userLog(per){
-    localStorage.setItem("User-Log", JSON.stringify(per))
+function userLog(per) {
+    sessionStorage.setItem("Log", JSON.stringify(true));
+    localStorage.setItem("User-Log", JSON.stringify(per));
 }
 
 (() => {
@@ -63,16 +64,16 @@ const validarFormulario = (e) => {
     mensaje.innerHTML = "";
     switch (e.target.name) {
         case "nombre":
-            val(expresiones.nombre, e.target, e.target.name)
+            val(expresiones.nombre, e.target, e.target.name);
             break;
         case "apellido":
-            val(expresiones.nombre, e.target, e.target.name)
+            val(expresiones.nombre, e.target, e.target.name);
             break;
         case "email":
-            val(expresiones.correo, e.target, e.target.name)
+            val(expresiones.correo, e.target, e.target.name);
             break;
         case "contra":
-            val(expresiones.password, e.target, e.target.name)
+            val(expresiones.password, e.target, e.target.name);
             break;
     }
 }
@@ -85,10 +86,10 @@ function val(expresion, input, campo) {
         document.getElementById("warnings").classList.remove("msg");
         document.getElementById("warnings").classList.add("msg-active");
         if (campo == 'contra') {
-            warnings = `La contraseña no es valida <br>`
+            warnings = `La contraseña no es valida <br>`;
             mensaje.innerHTML = warnings;
         } else {
-            warnings = `El ${campo} no es valido <br>`
+            warnings = `El ${campo} no es valido <br>`;
             mensaje.innerHTML = warnings;
         }
         campos[campo] = false;
@@ -115,11 +116,12 @@ formulario.addEventListener("submit", (e) => {
         if (arrayPersonas.length === 0) {
             var per = new Persona(contador, nombre.value, apellido.value, direccion_1.value, direccion_2.value, pais.value, ciudad.value, email.value, contrasenna.value);
             registrar(per);
+            userLog(per);
             alerta(estado);
         } else {
             arrayPersonas.forEach(element => {
                 if (element._email === email.value) {
-                    estado = true
+                    estado = true;
                 }
             });
             if (!estado) {
@@ -139,17 +141,15 @@ function alerta(estado) {
     document.getElementById("warnings").classList.remove("msg");
     document.getElementById("warnings").classList.add("msg-active");
     if (estado) {
-        warnings = `Correo ya registrado <br>`
+        warnings = `Correo ya registrado <br>`;
         mensaje.innerHTML = warnings;
     } else {
         formulario.reset();
-        warnings = `Usuario registrado <br>`
+        warnings = `Usuario registrado <br>`;
         mensaje.innerHTML = warnings;
-        setTimeout(() => {
-            document.getElementById("warnings").classList.remove("msg-active");
-            document.getElementById("warnings").classList.add("msg");
-            window.location.assign('../dashboard/dashboard.html')
-        }, 2000)
+        document.getElementById("warnings").classList.remove("msg-active");
+        document.getElementById("warnings").classList.add("msg");
+        window.location.assign('../dashboard/dashboard.html');
     }
 }
 

@@ -4,7 +4,7 @@ var user;
 
 (() => {
     user = JSON.parse(localStorage.getItem("User-Log"));
-    tex = `Bienvenido ${user._nom}, aqui podra encontrar el estado de sus Camabalaches y sus productos registrados.`
+    tex = `Bienvenido ${user._nom}, aqui podra encontrar el estado de sus Camabalaches y sus productos registrados.`;
     texto.innerHTML = tex;
     arrayProductos = JSON.parse(localStorage.getItem("Productos"));
     if (arrayProductos === null) {
@@ -30,7 +30,7 @@ function cargarProducto() {
                             </div>
                         </div>
                     </div>`;
-            var ob = document.createElement("div")
+            var ob = document.createElement("div");
             ob.className = "col";
             ob.innerHTML = produ;
             document.getElementById('base').appendChild(ob);
@@ -63,8 +63,8 @@ boton.forEach(function(item){
 
 document.querySelector('#new').addEventListener('click', e => {
     e.preventDefault();
-    localStorage.setItem("Editar", JSON.stringify(false))
-    window.location.assign('../info-producto/agregar-producto.html')
+    localStorage.setItem("Editar", JSON.stringify(false));
+    window.location.assign('../info-producto/agregar-producto.html');
 })
 
 $(document).ready(function () {

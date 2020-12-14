@@ -10,8 +10,8 @@ formulario.addEventListener("reset", e => {
 })
 
 function userLog(per) {
-    sessionStorage.setItem("Log", JSON.stringify(true))
-    localStorage.setItem("User-Log", JSON.stringify(per))
+    sessionStorage.setItem("Log", JSON.stringify(true));
+    localStorage.setItem("User-Log", JSON.stringify(per));
 }
 
 (() => {
@@ -41,10 +41,10 @@ formulario.addEventListener("submit", (e) => {
             })
             if (per == null) {
                 if (corr != '') {
-                    estado = 'contra'
+                    estado = 'contra';
                     alerta(estado);
                 } else {
-                    estado = 'usuario'
+                    estado = 'usuario';
                     alerta(estado);
                 }
             } else {
@@ -65,13 +65,13 @@ function alerta(estado) {
         document.getElementById("warnings").classList.add("msg");
         window.location.assign('../dashboard/dashboard.html')
     } else if (estado == 'usuario') {
-        warnings = `Usuario no registrado <br>`
+        warnings = `Usuario no registrado <br>`;
         mensaje.innerHTML = warnings;
     } else if (estado == 'contra') {
-        warnings = `Contraseña incorrecta <br>`
+        warnings = `Contraseña incorrecta <br>`;
         mensaje.innerHTML = warnings;
     } else if (estado == 'vacio') {
-        warnings = `No hay usuarios registrados, por favor registrese <br>`
+        warnings = `No hay usuarios registrados, por favor registrese <br>`;
         mensaje.innerHTML = warnings;
     }
 }

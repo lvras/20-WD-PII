@@ -26,17 +26,6 @@
     background: gray;
 }
 
-.box{
-    margin-top: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    list-style: none;
-    background: #efefef;
-    /* margin-right: 100px; */
-    /* margin-left: 36px;
-    width: 554px; */
-}
-
 .categorias {
     margin-top: 70px;
 }
@@ -86,4 +75,16 @@ footer {
         width: 80%;
         height: 80%;
     }
+}
+
+.alinear{
+    right: 42px;
+}
+
+.box{
+    margin-top: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    list-style: none;
+    background: #efefef;
 }

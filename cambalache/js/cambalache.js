@@ -6,13 +6,12 @@ var user;
     if (log != null){
         arriba = document.getElementById("logger1");
         abajo = document.getElementById("logger2");
-        arriba.innerText = 'Dashboard'
-        arriba.href = '../dashboard/dashboard.html'
-        abajo.innerText = 'Dashboard'
-        abajo.href = '../dashboard/dashboard.html'
+        arriba.innerText = 'Dashboard';
+        arriba.href = '../dashboard/dashboard.html';
+        abajo.innerText = 'Dashboard';
+        abajo.href = '../dashboard/dashboard.html';
     }
 
-    user = JSON.parse(localStorage.getItem("User-Log"));
     arrayProductos = JSON.parse(localStorage.getItem("Productos"));
     if (arrayProductos === null) {
         arrayProductos = [];
@@ -37,7 +36,7 @@ function cargarProducto() {
                         </div>
                     </div>
                 </div>`;
-        var ob = document.createElement("div")
+        var ob = document.createElement("div");
         ob.className = "col";
         ob.innerHTML = produ;
         document.getElementById('base').appendChild(ob);

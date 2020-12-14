@@ -37,12 +37,12 @@ formulario.addEventListener("submit", (e) => {
     }
     registrar(pro);
     formulario.reset();
-    window.location.assign('../dashboard/dashboard.html')
+    window.location.assign('../dashboard/dashboard.html');
 })
 
 formulario.addEventListener("reset", (e) => {
     if(estado){
-        window.location.assign('../dashboard/dashboard.html')
+        window.location.assign('../dashboard/dashboard.html');
     }
 })
 
@@ -50,7 +50,7 @@ function registrar(pro) {
     if(estado){
         arrayProductos.forEach(element => {
             if(element._id == prod._id){
-                arrayProductos.splice(arrayProductos.indexOf(element), 1, pro)
+                arrayProductos.splice(arrayProductos.indexOf(element), 1, pro);
             }
         });
     } else {
