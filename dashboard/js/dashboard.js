@@ -1,8 +1,21 @@
 const texto = document.getElementById("text");
+btnArriba = document.getElementById("sal1");
+btnAbajo = document.getElementById("sal2");
 var arrayProductos;
 var user;
 
 (() => {
+    log = JSON.parse(sessionStorage.getItem("Log"));
+    if (log === null) {
+        log = false;
+    }
+    if (log) {
+        btnArriba.innerText = 'Salir';
+        btnArriba.href = '../index.html';
+        btnAbajo.innerText = 'Salir';
+        btnAbajo.href = '../index.html';
+    }
+
     user = JSON.parse(localStorage.getItem("User-Log"));
     tex = `Bienvenido ${user._nom}, aqui podra encontrar el estado de sus Camabalaches y sus productos registrados.`;
     texto.innerHTML = tex;
@@ -12,6 +25,19 @@ var user;
     }
     cargarProducto();
 })();
+
+btnArriba.addEventListener('click', function(){
+    logOut();
+})
+
+btnAbajo.addEventListener('click', function(){
+    logOut();
+})
+
+function logOut(){
+    sessionStorage.setItem("Log", JSON.stringify(null));
+    localStorage.setItem("User-Log", JSON.stringify(null));
+}
 
 function cargarProducto() {
     arrayProductos.forEach(element => {

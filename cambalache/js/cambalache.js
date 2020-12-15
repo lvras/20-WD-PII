@@ -1,9 +1,14 @@
 var arrayProductos;
 var user;
+var filtro;
+var categoria;
 
 (() => {
     log = JSON.parse(sessionStorage.getItem("Log"));
-    if (log != null){
+    if (log === null) {
+        log = false;
+    }
+    if (log) {
         arriba = document.getElementById("logger1");
         abajo = document.getElementById("logger2");
         arriba.innerText = 'Dashboard';
@@ -16,39 +21,75 @@ var user;
     if (arrayProductos === null) {
         arrayProductos = [];
     }
+    filtro = JSON.parse(sessionStorage.getItem("Filtro"));
+    if (filtro === null) {
+        filtro = '';
+    }
+    categoria = JSON.parse(sessionStorage.getItem("Categoria"));
     cargarProducto();
 })();
 
 function cargarProducto() {
     arrayProductos.reverse().forEach(element => {
-        produ = `<div class="card mb-3">
-                    <div class="row">
-                        <div class="col-md-5 col-lg-6">
-                            <img src="${element._url}" name="${element._id}" alt="..." class="img-fluid" />
-                        </div>
-                        <div class="col-md-7 col-lg-6">
-                            <div class="card-body">
-                                <h5 class="card-title">${element._nombre}</h5>
-                                <p class="card-text">
-                                ${element._user._nom}
-                                </p>
+        if (categoria != "") {
+            if (categoria === element._categoria) {
+                produ = `<div class="card mb-3">
+                        <div class="row">
+                            <div class="col-md-5 col-lg-6">
+                                <img src="${element._url}" name="${element._id}" alt="..." class="img-fluid" />
+                            </div>
+                            <div class="col-md-7 col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">${element._nombre}</h5>
+                                    <p class="card-text">
+                                    ${element._user._nom}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>`;
-        var ob = document.createElement("div");
-        ob.className = "col";
-        ob.innerHTML = produ;
-        document.getElementById('base').appendChild(ob);
+                    </div>`;
+                var ob = document.createElement("div");
+                ob.className = "col";
+                ob.innerHTML = produ;
+                document.getElementById('base').appendChild(ob);
+            }
+        } else {
+            const texto = filtro.toLowerCase();
+            let nombre = element._nombre.toLowerCase();
+            if (nombre.indexOf(texto) !== -1) {
+                produ = `<div class="card mb-3">
+                        <div class="row">
+                            <div class="col-md-5 col-lg-6">
+                                <img src="${element._url}" name="${element._id}" alt="..." class="img-fluid" />
+                            </div>
+                            <div class="col-md-7 col-lg-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">${element._nombre}</h5>
+                                    <p class="card-text">
+                                    ${element._user._nom}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                var ob = document.createElement("div");
+                ob.className = "col";
+                ob.innerHTML = produ;
+                document.getElementById('base').appendChild(ob);
+            }
+        }
     })
+    sessionStorage.setItem("Filtro", JSON.stringify(''));
+    sessionStorage.setItem("Categoria", JSON.stringify(''));
+
 }
 
 const img = document.querySelectorAll('img');
 
-img.forEach(function(item){
-    item.addEventListener('click', function(){
+img.forEach(function (item) {
+    item.addEventListener('click', function () {
         arrayProductos.forEach(element => {
-            if(element._id == item.name){
+            if (element._id == item.name) {
                 localStorage.setItem("Prod-selec", JSON.stringify(element));
                 window.location.assign('../producto/producto.html');
             }

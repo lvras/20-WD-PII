@@ -3,7 +3,10 @@ var cont = 0;
 
 (() => {
     log = JSON.parse(sessionStorage.getItem("Log"));
-    if (log != null){
+    if (log === null) {
+        log = false;
+    }
+    if (log){
         arriba = document.getElementById("logger1");
         abajo = document.getElementById("logger2");
         arriba.innerText = 'Dashboard';
@@ -45,6 +48,15 @@ img.forEach(function(item){
                 window.location.assign('./producto/producto.html');
             }
         })
+    })
+})
+
+img.forEach(function (item) {
+    item.addEventListener('click', function () {
+        if (item.name === "Hogar" || item.name === "Automoviles" || item.name === "Electronica") {
+            sessionStorage.setItem("Categoria", JSON.stringify(item.name));
+            window.location.assign('./cambalache/cambalache.html');
+        }
     })
 })
 
@@ -91,7 +103,13 @@ function EventHandler(e) {
     })
 }
 
-boton.addEventListener('click', filtrar);
+boton.addEventListener('click', function(){
+    if (formulario.value !== '') {
+        sessionStorage.setItem("Filtro", JSON.stringify(formulario.value));
+        formulario.value = '';
+        window.location.assign('./cambalache/cambalache.html');
+    }
+});
 formulario.addEventListener('keyup', filtrar);
 
 $('.carousel').carousel({

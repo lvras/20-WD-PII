@@ -1,5 +1,6 @@
 const formulario = document.getElementById("form");
 const nombre = document.getElementById("nombre");
+const categoria = document.getElementById("cat");
 const descripcion = document.getElementById("descripcion");
 const imagen = document.getElementById("url");
 const busqueda = document.getElementById("busco");
@@ -19,6 +20,7 @@ var prod = JSON.parse(localStorage.getItem("Prod-edit"));
     estado = JSON.parse(localStorage.getItem("Editar"));
     if(estado){
         nombre.value = prod._nombre;
+        categoria.value = prod._categoria;
         descripcion.value = prod._descripcion;
         imagen.value = prod._url;
         busqueda.value = prod._busqueda;
@@ -31,9 +33,9 @@ formulario.addEventListener("submit", (e) => {
         if(arrayProductos.length != 0){
             contador = arrayProductos[arrayProductos.length - 1]._id + 1;
         }
-        var pro = new Producto(contador, User, nombre.value, descripcion.value, imagen.value, busqueda.value);
+        var pro = new Producto(contador, User, nombre.value, categoria.value, descripcion.value, imagen.value, busqueda.value);
     } else {
-        var pro = new Producto(prod._id, prod._user, nombre.value, descripcion.value, imagen.value, busqueda.value);
+        var pro = new Producto(prod._id, prod._user, nombre.value, categoria.value, descripcion.value, imagen.value, busqueda.value);
     }
     registrar(pro);
     formulario.reset();
@@ -60,10 +62,11 @@ function registrar(pro) {
 }
 
 class Producto {
-    constructor(id, user, nombre, descripcion, url, busqueda){
+    constructor(id, user, nombre, categoria, descripcion, url, busqueda){
         this._id = id;
         this._user = user;
         this._nombre = nombre;
+        this._categoria = categoria;
         this._descripcion = descripcion;
         this._url = url;
         this._busqueda = busqueda;
