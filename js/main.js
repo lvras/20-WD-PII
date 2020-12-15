@@ -53,8 +53,8 @@ img.forEach(function(item){
 
 img.forEach(function (item) {
     item.addEventListener('click', function () {
-        if (item.name === "Hogar" || item.name === "Automoviles" || item.name === "Electronica") {
-            sessionStorage.setItem("Categoria", JSON.stringify(item.name));
+        if (item.id === "Hogar" || item.id === "Automoviles" || item.id === "Electronica") {
+            sessionStorage.setItem("Categoria", JSON.stringify(item.id));
             window.location.assign('./cambalache/cambalache.html');
         }
     })
